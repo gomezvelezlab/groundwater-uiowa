@@ -1,0 +1,18 @@
+name: env_gw_iowa
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - flopy
+  - geopandas
+  - shapely
+  - numpy
+  - scipy
+  - matplotlib
+  - jupyterlab
+  - xarray
+  - netcdf4
+  - rasterio
+  - pandas
+  - rioxarray
