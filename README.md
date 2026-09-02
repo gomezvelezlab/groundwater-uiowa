@@ -25,3 +25,10 @@ In the terminal wondow, run the following command:
 python -m ipykernel install --user --name env_gw_iowa --display-name "Python (groundwater class)"
 ```
 
+# Step 4: Make USGS bianries executable
+
+In the terminal wondow, run the following command:
+
+```bash
+chmod +rx ./usgs_code/*
+```
