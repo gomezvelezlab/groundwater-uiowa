@@ -90,3 +90,81 @@ Copy the binary and grant permissions:
 ```bash 
 chmod +x /home/jgomezvelez/classdata/usgs_binaries/mf6
 ```
+
+## Compiling MODPATH 7
+
+### 1. Clone the repository and enter the directory:
+
+```bash
+git clone https://github.com/MODFLOW-ORG/modpath-v7.git
+```
+Enter the new directory
+```bash
+cd modpath-v7
+```
+
+### 2. Compile with static linking
+```bash
+mfpymake source mp7 -mc -fc gfortran -ff="-O2 -static-libgfortran" -cf="-O2 -static-libgcc"
+```
+
+### 3. Set execution permissions and verify:
+```bash
+chmod 755 mp7
+ldd mp7
+```
+
+```bash
+./mp7
+```
+
+### Share with students
+
+```bash 
+mkdir /home/jgomezvelez/classdata/usgs_binaries
+```
+
+Copy the binary and grant permissions:
+
+```bash 
+chmod +x /home/jgomezvelez/classdata/usgs_binaries/mp7
+```
+
+## Compiling MT3D-USGS
+
+### 1. Clone the repository and enter the directory:
+
+```bash
+git clone https://github.com/MODFLOW-ORG/mt3d-usgs.git
+```
+Enter the new directory
+```bash
+cd mt3d-usgs
+```
+
+### 2. Compile with static linking
+```bash
+mfpymake src mt3dusgs -mc -fc gfortran -ff="-O2 -static-libgfortran" -cf="-O2 -static-libgcc"
+```
+
+### 3. Set execution permissions and verify:
+```bash
+chmod 755 mt3dusgs
+ldd mt3dusgs
+```
+
+```bash
+./mt3dusgs
+```
+
+### Share with students
+
+```bash 
+mkdir /home/jgomezvelez/classdata/usgs_binaries
+```
+
+Copy the binary and grant permissions:
+
+```bash 
+chmod +x /home/jgomezvelez/classdata/usgs_binaries/mt3dusgs
+```
