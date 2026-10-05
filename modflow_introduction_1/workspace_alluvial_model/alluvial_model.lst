@@ -1,0 +1,310 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.7.0 02/05/2026
+
+        MODFLOW 6 compiled Feb  5 2026 22:36:20 with GCC version 13.4.0
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: -fdiagnostics-color=always -cpp -I
+src/libmf6_external.a.p -I src/libmf6core.a.p -I src -I ../src -iprefix
+/opt/homebrew/Cellar/gcc@13/13.4.0/bin/../lib/gcc/13/gcc/aarch64-apple-darwin2
+3/13/ -D__DYNAMIC__ -D __APPLE__ -fPIC -mmacosx-version-min=14.0.0
+-mcpu=apple-m1 -mlittle-endian -mabi=lp64 -O1 -Wall -Wpedantic
+-Wcharacter-truncation -Wno-unused-dummy-argument -Wno-intrinsic-shadow
+-Wno-maybe-uninitialized -Wno-uninitialized -std=f2018 -fall-intrinsics
+-ffpe-summary=overflow -ffpe-trap=overflow,zero,invalid -J src/libmf6core.a.p
+
+System command used to initiate simulation:
+/Users/jgomezvelez/.local/share/flopy/bin/mf6
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+
+ NAMEFILE OPTIONS:
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/DIS                      
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/NPF                      
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/ALLUVIAL_MODEL/IC                       
+
+
+ Setting Discretization Options
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 1
+    NROW = 50
+    NCOL = 50
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+ End Setting Discretization Griddata
+
+ Setting NPF Options
+    Cell-by-cell flow information will be saved to binary file whenever ICBCFL is not zero.
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 not provided.  Setting K33 = K.
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ WEL -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/WEL                      
+
+ PROCESSING WEL BASE OPTIONS
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =       3
+ END OF WEL BASE DIMENSIONS
+
+ RIV -- RIV PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RIV                      
+
+ PROCESSING RIV BASE OPTIONS
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END OF RIV BASE OPTIONS
+
+ PROCESSING RIV OPTIONS
+ END OF RIV OPTIONS
+
+ PROCESSING RIV BASE DIMENSIONS
+    MAXBOUND =      50
+ END OF RIV BASE DIMENSIONS
+
+ RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_3                   
+
+ PROCESSING RCH BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+ END OF RCHA OPTIONS
+
+ RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_2                   
+
+ PROCESSING RCH BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+ END OF RCHA OPTIONS
+
+ RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_1                   
+
+ PROCESSING RCH BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+ END OF RCHA OPTIONS
+
+ RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_0                   
+
+ PROCESSING RCH BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+ END OF RCHA OPTIONS
+
+ RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_4                   
+
+ PROCESSING RCH BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+ END OF RCHA OPTIONS
+
+ CHD -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/CHD                      
+
+ PROCESSING CHD BASE OPTIONS
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =     100
+ END OF CHD BASE DIMENSIONS
+    STRT set from input file
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1026
+      FILE NAME: alluvial_model.dis.grb
+
+ OPENED alluvial_model.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1026   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1027
+      FILE NAME: alluvial_model.cbc
+
+ OPENED alluvial_model.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1027   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1028
+      FILE NAME: alluvial_model.hds
+
+ OPENED alluvial_model.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1028   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL ALLUVIAL_MODEL   PACKAGE NPF             CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE NPF              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE WEL              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              RIV IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE RIV              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE CHD              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1028 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 RIV =           0.0000                   RIV =           0.0000     RIV                              
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_3                           
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_2                           
+                RCHA =       96000.0000                  RCHA =       96000.0000     RCHA_1                           
+                RCHA =      192000.0000                  RCHA =      192000.0000     RCHA_0                           
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_4                           
+                 CHD =           0.0000                   CHD =           0.0000     CHD                              
+
+            TOTAL IN =      288000.0000              TOTAL IN =      288000.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 RIV =      122419.6310                   RIV =      122419.6310     RIV                              
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_3                           
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_2                           
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_1                           
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_4                           
+                 CHD =      165611.6957                   CHD =      165611.6957     CHD                              
+
+           TOTAL OUT =      288031.3267             TOTAL OUT =      288031.3267
+
+            IN - OUT =         -31.3267              IN - OUT =         -31.3267
+
+ PERCENT DISCREPANCY =          -0.01     PERCENT DISCREPANCY =          -0.01
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
+ STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+         TOTAL TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+
+
+end timestep
+
