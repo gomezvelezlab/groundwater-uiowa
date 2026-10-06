@@ -103,7 +103,7 @@ Logical Variables
 
  Setting Discretization Dimensions
     NLAY = 1
-    NROW = 50
+    NROW = 100
     NCOL = 50
  End Setting Discretization Dimensions
 
@@ -150,46 +150,10 @@ Logical Variables
  END OF RIV OPTIONS
 
  PROCESSING RIV BASE DIMENSIONS
-    MAXBOUND =      50
+    MAXBOUND =     100
  END OF RIV BASE DIMENSIONS
 
- RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_3                   
-
- PROCESSING RCH BASE OPTIONS
-    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
- END OF RCH BASE OPTIONS
-
- PROCESSING RCHA OPTIONS
- END OF RCHA OPTIONS
-
- RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_2                   
-
- PROCESSING RCH BASE OPTIONS
-    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
- END OF RCH BASE OPTIONS
-
- PROCESSING RCHA OPTIONS
- END OF RCHA OPTIONS
-
- RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_1                   
-
- PROCESSING RCH BASE OPTIONS
-    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
- END OF RCH BASE OPTIONS
-
- PROCESSING RCHA OPTIONS
- END OF RCHA OPTIONS
-
  RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_0                   
-
- PROCESSING RCH BASE OPTIONS
-    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
- END OF RCH BASE OPTIONS
-
- PROCESSING RCHA OPTIONS
- END OF RCHA OPTIONS
-
- RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/ALLUVIAL_MODEL/RCHA_4                   
 
  PROCESSING RCH BASE OPTIONS
     PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
@@ -209,11 +173,11 @@ Logical Variables
  END OF CHD BASE DIMENSIONS
     STRT set from input file
     BINARY GRID INFORMATION WILL BE WRITTEN TO:
-      UNIT NUMBER: 1026
+      UNIT NUMBER: 1018
       FILE NAME: alluvial_model.dis.grb
 
  OPENED alluvial_model.dis.grb
- FILE TYPE:DATA(BINARY)   UNIT 1026   STATUS:REPLACE             
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
  FORMAT:UNFORMATTED            ACCESS:STREAM              
  ACTION:READWRITE           
 
@@ -223,20 +187,20 @@ Logical Variables
  PROCESSING OC OPTIONS
 
     BUDGET INFORMATION WILL BE WRITTEN TO:
-      UNIT NUMBER: 1027
+      UNIT NUMBER: 1019
       FILE NAME: alluvial_model.cbc
 
  OPENED alluvial_model.cbc
- FILE TYPE:DATA(BINARY)   UNIT 1027   STATUS:REPLACE             
+ FILE TYPE:DATA(BINARY)   UNIT 1019   STATUS:REPLACE             
  FORMAT:UNFORMATTED            ACCESS:STREAM              
  ACTION:READWRITE           
 
     HEAD INFORMATION WILL BE WRITTEN TO:
-      UNIT NUMBER: 1028
+      UNIT NUMBER: 1020
       FILE NAME: alluvial_model.hds
 
  OPENED alluvial_model.hds
- FILE TYPE:DATA(BINARY)   UNIT 1028   STATUS:REPLACE             
+ FILE TYPE:DATA(BINARY)   UNIT 1020   STATUS:REPLACE             
  FORMAT:UNFORMATTED            ACCESS:STREAM              
  ACTION:READWRITE           
 
@@ -250,13 +214,13 @@ start timestep kper="1" kstp="1" mode="normal"
       ALL TIME STEPS WILL BE SAVED
 
  END READING OUTPUT CONTROL FOR STRESS PERIOD 1
- UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
- UBDSV06 SAVING       DATA-SPDIS IN MODEL ALLUVIAL_MODEL   PACKAGE NPF             CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE NPF              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
- UBDSV06 SAVING              WEL IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE WEL              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
- UBDSV06 SAVING              RIV IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE RIV              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
- UBDSV06 SAVING              CHD IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE CHD              ON UNIT   1027 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL ALLUVIAL_MODEL   PACKAGE NPF             CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE WEL              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              RIV IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE RIV              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL ALLUVIAL_MODEL   PACKAGE ALLUVIAL_MODEL  CONNECTED TO MODEL ALLUVIAL_MODEL   PACKAGE CHD              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
 
- HEAD WILL BE SAVED ON UNIT 1028 AT END OF TIME STEP    1, STRESS PERIOD    1
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    1
 
 
   VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
@@ -268,32 +232,24 @@ start timestep kper="1" kstp="1" mode="normal"
            IN:                                      IN:
            ---                                      ---
                  WEL =           0.0000                   WEL =           0.0000     WEL                              
-                 RIV =           0.0000                   RIV =           0.0000     RIV                              
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_3                           
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_2                           
-                RCHA =       96000.0000                  RCHA =       96000.0000     RCHA_1                           
-                RCHA =      192000.0000                  RCHA =      192000.0000     RCHA_0                           
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_4                           
-                 CHD =           0.0000                   CHD =           0.0000     CHD                              
+                 RIV =        5915.2050                   RIV =        5915.2050     RIV                              
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                 CHD =        9456.1394                   CHD =        9456.1394     CHD                              
 
-            TOTAL IN =      288000.0000              TOTAL IN =      288000.0000
+            TOTAL IN =       15371.3444              TOTAL IN =       15371.3444
 
           OUT:                                     OUT:
           ----                                     ----
-                 WEL =           0.0000                   WEL =           0.0000     WEL                              
-                 RIV =      122419.6310                   RIV =      122419.6310     RIV                              
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_3                           
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_2                           
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_1                           
+                 WEL =       10000.0000                   WEL =       10000.0000     WEL                              
+                 RIV =           0.0000                   RIV =           0.0000     RIV                              
                 RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_4                           
-                 CHD =      165611.6957                   CHD =      165611.6957     CHD                              
+                 CHD =        5472.1538                   CHD =        5472.1538     CHD                              
 
-           TOTAL OUT =      288031.3267             TOTAL OUT =      288031.3267
+           TOTAL OUT =       15472.1538             TOTAL OUT =       15472.1538
 
-            IN - OUT =         -31.3267              IN - OUT =         -31.3267
+            IN - OUT =        -100.8094              IN - OUT =        -100.8094
 
- PERCENT DISCREPANCY =          -0.01     PERCENT DISCREPANCY =          -0.01
+ PERCENT DISCREPANCY =          -0.65     PERCENT DISCREPANCY =          -0.65
 
 
 
