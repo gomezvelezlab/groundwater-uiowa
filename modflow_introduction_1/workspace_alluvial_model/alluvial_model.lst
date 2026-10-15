@@ -232,24 +232,24 @@ start timestep kper="1" kstp="1" mode="normal"
            IN:                                      IN:
            ---                                      ---
                  WEL =           0.0000                   WEL =           0.0000     WEL                              
-                 RIV =        5924.7318                   RIV =        5924.7318     RIV                              
-                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
-                 CHD =        9410.7471                   CHD =        9410.7471     CHD                              
+                 RIV =           0.0000                   RIV =           0.0000     RIV                              
+                RCHA =       19600.0000                  RCHA =       19600.0000     RCHA_0                           
+                 CHD =        9326.8620                   CHD =        9326.8620     CHD                              
 
-            TOTAL IN =       15335.4789              TOTAL IN =       15335.4789
+            TOTAL IN =       28926.8620              TOTAL IN =       28926.8620
 
           OUT:                                     OUT:
           ----                                     ----
-                 WEL =       10000.0000                   WEL =       10000.0000     WEL                              
-                 RIV =           0.0000                   RIV =           0.0000     RIV                              
+                 WEL =           0.0000                   WEL =           0.0000     WEL                              
+                 RIV =        8385.2963                   RIV =        8385.2963     RIV                              
                 RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
-                 CHD =        5422.5606                   CHD =        5422.5606     CHD                              
+                 CHD =       20671.6119                   CHD =       20671.6119     CHD                              
 
-           TOTAL OUT =       15422.5606             TOTAL OUT =       15422.5606
+           TOTAL OUT =       29056.9081             TOTAL OUT =       29056.9081
 
-            IN - OUT =         -87.0817              IN - OUT =         -87.0817
+            IN - OUT =        -130.0461              IN - OUT =        -130.0461
 
- PERCENT DISCREPANCY =          -0.57     PERCENT DISCREPANCY =          -0.57
+ PERCENT DISCREPANCY =          -0.45     PERCENT DISCREPANCY =          -0.45
 
 
 
