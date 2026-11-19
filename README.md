@@ -168,3 +168,79 @@ Copy the binary and grant permissions:
 ```bash 
 chmod +x /home/jgomezvelez/classdata/usgs_binaries/mt3dusgs
 ```
+
+## MODFLOW-NWT
+
+### 1. Download and extract the source code
+```bash
+mkdir -p modflow-nwt && cd modflow-nwt
+
+wget [https://water.usgs.gov/water-resources/software/MODFLOW-NWT/MODFLOW-NWT_1.3.0.zip](https://water.usgs.gov/water-resources/software/MODFLOW-NWT/MODFLOW-NWT_1.3.0.zip)
+unzip MODFLOW-NWT_1.3.0.zip
+
+cd MODFLOW-NWT
+```
+
+### 2. Install Build Tools: Prerequisite. Install Meson and Ninja in your active environment using Python's package manager:
+
+```bash
+conda activate env_gw_iowa
+```
+
+Check if Meson and Ninja are installed in the environment.
+
+### 3. Configure the Build: Static Linking. Create a meson.build file and initialize the build directory with static linking flags so the binary runs cleanly in student sessions:
+
+
+```bash
+python3 -c '
+import glob, os
+files = sorted(glob.glob("src/*.[fF]*"))
+exclude = {"src/Irestart.f", "src/gmg7_NWT.f", "src/gmg7.f", "src/r_vector.c", "src/solvers.c", "src/ccfd.c", "src/mf2k的原则.c"}
+files = [f for f in files if f not in exclude and not os.path.basename(f).startswith("gmg")]
+with open("meson.build", "w") as out:
+    out.write("""project(\x27mfnwt\x27, \x27fortran\x27, \x27c\x27,
+  version: \x271.3.0\x27,
+  default_options: [\x27warning_level=0\x27]
+)
+
+fc = meson.get_compiler(\x27fortran\x27)
+add_project_arguments(
+  fc.get_supported_arguments([\x27-std=legacy\x27, \x27-fallow-argument-mismatch\x27, \x27-Wno-argument-mismatch\x27]),
+  language: \x27fortran\x27
+)
+
+sources = files(\n""")
+    for f in files:
+        out.write(f"  \x27{f}\x27,\n")
+    out.write(")\n\nexecutable(\x27mfnwt\x27, sources)\n")
+'
+meson setup builddir --reconfigure -Doptimization=2 -Dc_link_args="-static-libgcc" -Dfortran_link_args="-static-libgfortran"
+ninja -C builddir
+```
+
+
+### 4. Verify Static Linking
+Confirm the executable is not relying on dynamic Fortran or GCC libraries:
+
+```bash
+ldd builddir/mfnwt
+```
+
+### 5. Test the Binary
+Run the executable to confirm the USGS MODFLOW-NWT version banner prints cleanly:
+
+```bash
+./builddir/mfnwt
+```
+
+### 6. Set Permissions and Share with Students on IDAS
+Apply execution permissions and copy the binary into your shared usgs_binaries folder:
+
+```bash
+chmod 755 builddir/mfnwt
+mkdir -p /home/jgomezvelez/classdata/usgs_binaries
+cp builddir/mfnwt /home/jgomezvelez/classdata/usgs_binaries/
+chmod +x /home/jgomezvelez/classdata/usgs_binaries/mfnwt
+
+```
